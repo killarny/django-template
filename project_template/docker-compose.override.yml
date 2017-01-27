@@ -2,7 +2,7 @@ services:
 
   site:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: bash /{{ project_name }}/server/django-devserver.sh
     environment:
       DJANGO_SETTINGS_MODULE: {{ project_name }}.settings.dev
     volumes:
