@@ -1,0 +1,20 @@
+services:
+
+  site:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    environment:
+      DJANGO_SETTINGS_MODULE: {{ project_name }}.settings.dev
+    volumes:
+      - .:/{{ project_name }}
+    ports:
+      - "8000:8000"
+    restart: "no"
+
+  database:
+    volumes:
+      - ./server/dev/data/:/var/lib/postgresql/data/
+    restart: "no"
+
+
+version: '2'

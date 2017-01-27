@@ -1,0 +1,21 @@
+services:
+
+  site:
+    build:
+      args:
+        BRANCH: production
+    environment:
+      DJANGO_SETTINGS_MODULE: {{ project_name }}.settings.production
+      SCHEMA: https
+      FQDN: {{ project_name }}.TODO
+    volumes:
+      - /var/{{ project_name }}/production/backend/:/var/media/{{ project_name }}/
+    ports:
+      - "8000:8000"
+
+  database:
+    volumes:
+      - /var/{{ project_name }}/production/data/:/var/lib/postgresql/data/
+
+
+version: '2'
