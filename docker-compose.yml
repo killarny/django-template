@@ -5,6 +5,7 @@ services:
     environment:
       - POSTGRES_USER=django_project
       - POSTGRES_PASSWORD=django_project
+    restart: "no"
 
   site:
     build: .
@@ -16,6 +17,7 @@ services:
     environment:
       DB_HOST: database
       PYTHONUNBUFFERED: 1
+    restart: "no"
 
 
 version: '2'
