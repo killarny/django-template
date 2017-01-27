@@ -9,7 +9,7 @@ services:
 
   site:
     build: .
-    command: bash /django_project/server/django_devserver.sh
+    command: bash /django_project/server/django-devserver.sh
     depends_on:
     - database
     ports:
