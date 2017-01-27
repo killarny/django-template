@@ -3,7 +3,7 @@
 # show usage help if no project name given in args
 PROJECT_NAME="$1"
 if [[ -z "${PROJECT_NAME// }" ]]; then
-    echo >&2 "Usage: startproject.sh <project_name>"
+    echo >&2 "Usage: bootstrap.sh <project_name>"
     exit 1
 fi
 
