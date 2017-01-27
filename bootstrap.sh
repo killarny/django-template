@@ -36,6 +36,5 @@ rm -rf $TEMP_DIR
 
 # fix permissions for files that should be executable
 chmod a+x \
-  $PROJECT_NAME/run \
   $PROJECT_NAME/manage.py \
   $PROJECT_NAME/server/django_devserver.sh
