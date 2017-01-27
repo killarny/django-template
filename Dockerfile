@@ -1,6 +1,7 @@
 FROM python:3
 
-ENV CPATH=/usr/local/include/python3.5m
+# detect and set the library include path for this version of python
+RUN echo "export CPATH=$(find /usr/local/include -name python* |sort |head -n1)" >> ~/.bashrc
 
 RUN apt-get -qqy update && apt-get install -qqy \
     wget \
