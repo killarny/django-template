@@ -1,0 +1,21 @@
+services:
+
+  database:
+    image: postgres
+    environment:
+      - POSTGRES_USER=django_project
+      - POSTGRES_PASSWORD=django_project
+
+  site:
+    build: .
+    command: bash /django_project/server/django_devserver.sh
+    depends_on:
+    - database
+    ports:
+    - "8000:8000"
+    environment:
+      DB_HOST: database
+      PYTHONUNBUFFERED: 1
+
+
+version: '2'
