@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-until nc -z -v -w30 database 5432
+until nc -z -v -w30 database 5432 > /dev/null 2>&1
 do
   echo "Waiting for database container to start..."
   sleep 5
