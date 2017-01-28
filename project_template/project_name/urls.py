@@ -17,7 +17,7 @@ from django.conf import settings
 from django.conf.urls import url
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.utils.safestring import mark_safe
+from django.templatetags.static import static as static_asset
 from django.views.generic.base import RedirectView
 
 # some light admin customization
@@ -25,10 +25,10 @@ admin.site.site_title = admin.site.index_title = "{{ project_name }} admin area"
 
 urlpatterns = [
     # standard expected resources
-    url(r'^favicon.ico$', RedirectView.as_view(
-        url=settings.STATIC_URL + 'favicon.ico')),
-    url(r'^robots.txt$', RedirectView.as_view(
-        url=settings.STATIC_URL + 'robots.txt')),
+    url(r'^favicon.ico$',
+        RedirectView.as_view(url=static_asset('favicon.ico'))),
+    url(r'^robots.txt$',
+        RedirectView.as_view(url=static_asset('robots.txt'))),
 
     # admin
     url(r'^admin/', admin.site.urls),
