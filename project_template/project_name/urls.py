@@ -21,7 +21,7 @@ from django.templatetags.static import static as static_asset
 from django.views.generic.base import RedirectView
 
 # some light admin customization
-admin.site.site_title = admin.site.index_title = "{{ project_name }} admin area"
+admin.site.site_title = "{{ project_name }}"
 
 urlpatterns = [
     # standard expected resources
