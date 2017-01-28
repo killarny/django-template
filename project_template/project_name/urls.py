@@ -20,6 +20,8 @@ from django.contrib import admin
 from django.templatetags.static import static as static_asset
 from django.views.generic.base import RedirectView
 
+from apps.landing.views import LandingView
+
 # some light admin customization
 admin.site.site_title = "{{ project_name }}"
 
@@ -29,6 +31,9 @@ urlpatterns = [
         RedirectView.as_view(url=static_asset('favicon.ico'))),
     url(r'^robots.txt$',
         RedirectView.as_view(url=static_asset('robots.txt'))),
+
+    # landing page
+    url(r'^$', LandingView.as_view(), name='landing-page'),
 
     # admin
     url(r'^admin/', admin.site.urls),

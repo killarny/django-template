@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extrastyle %}
+    <link href='{% static "landing/css/landing.css" %}' rel='stylesheet' type='text/css'>
+    <style>
+        html {background-image: url({% static "landing/img/background.png" %});}
+    </style>
+{% endblock extrastyle %}
+
+{% block content %}
+    <div class="jumbotron">
+        <div class="container">
+            <h1>{{ site_name }}</h1>
+
+            <p class="lead">Select an area of this site to visit.</p>
+            <p>{% for link in links %}
+                <a class="btn btn-primary btn-lg" href="{{ link.url }}" role="button">{{ link.name }} &raquo;</a>
+            {% endfor %}</p>
+        </div>
+    </div>
+{% endblock content %}
