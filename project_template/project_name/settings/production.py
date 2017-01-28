@@ -32,6 +32,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
 
 # Domain configuration
 
