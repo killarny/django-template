@@ -5,6 +5,7 @@ services:
     command: bash /{{ project_name }}/server/django-devserver.sh
     environment:
       DJANGO_SETTINGS_MODULE: {{ project_name }}.settings.dev
+      FQDN: 0.0.0.0
     volumes:
       - .:/{{ project_name }}
     ports:

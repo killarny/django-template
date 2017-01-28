@@ -15,6 +15,7 @@ services:
     ports:
     - "8000:8000"
     environment:
+      FQDN: 0.0.0.0
       DB_HOST: database
       PYTHONUNBUFFERED: 1
     restart: "no"
