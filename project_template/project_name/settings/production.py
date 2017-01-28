@@ -13,7 +13,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(
 )))
 
 INSTALLED_APPS = [
-    'bootstrap_admin',
+    'material',
+    'material.admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -32,7 +33,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
 
 # Domain configuration
 

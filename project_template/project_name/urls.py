@@ -22,11 +22,6 @@ from django.views.generic.base import RedirectView
 
 # some light admin customization
 admin.site.site_title = admin.site.index_title = "{{ project_name }} admin area"
-admin.site.site_header = mark_safe('<img src="{img}" alt="{alt}"/>'.format(
-    img=settings.STATIC_URL + 'admin/img/logo-140x60.png',
-    alt=admin.site.site_title,
-))
-
 
 urlpatterns = [
     # standard expected resources
