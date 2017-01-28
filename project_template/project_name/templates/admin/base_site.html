@@ -2,3 +2,11 @@
 {% load static %}
 
 {% block favicon %}<link href="{% static 'favicon.ico' %}" rel="shortcut icon">{% endblock %}
+
+{% block title %}
+    {% if title == site_title %}
+        {{ site_title }}
+    {% else %}
+        {{ title }} | {{ site_title }}
+    {% endif %}
+{% endblock %}
