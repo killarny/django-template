@@ -3,7 +3,7 @@ FROM python:3.6
 ENV CPATH /usr/local/include/python3.6m
 
 RUN apt-get -qqy update && apt-get install -qqy \
-    netcat-openbsd wget \
+    netcat-openbsd wget nano \
 	&& rm -rf /var/lib/apt/lists/*
 
 WORKDIR /
