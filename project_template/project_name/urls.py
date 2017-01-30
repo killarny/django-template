@@ -26,6 +26,7 @@ from apps.landing.views import LandingView
 
 # some light admin customization
 admin.site.site_title = "{{ project_name }}"
+admin.site.login = login_required(admin.site.login)
 
 urlpatterns = [
     # standard expected resources
