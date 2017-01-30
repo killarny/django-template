@@ -11,6 +11,7 @@ services:
       EMAIL_HOST_USER: ""
       EMAIL_HOST_PASSWORD: ""
       EMAIL_USE_TLS: 1
+      SECRET_KEY: "{{ secret_key }}"
     logging:
       options:
         max-size: "10m"
