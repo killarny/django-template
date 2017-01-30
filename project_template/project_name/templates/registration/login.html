@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extrastyle %}
+    <link href='{% static "css/bootstrap-social.css" %}' rel='stylesheet' type='text/css'>
+{% endblock extrastyle %}
+
+{% block content %}
+    <div class="jumbotron">
+        <div class="container">
+            <h1>{{ site_name }}</h1>
+
+            <p class="lead">Please sign in to view that area of this site.</p>
+        </div>
+    </div>
+    <div class="container">
+        <a class="btn btn-block btn-social btn-facebook" href="{% url 'social:begin' 'facebook' %}">
+            <span class="fa fa-facebook"></span> Sign in with Facebook
+        </a>
+    </div>
+{% endblock content %}
