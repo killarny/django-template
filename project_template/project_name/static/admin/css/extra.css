@@ -1,4 +1,8 @@
 body {
     /*static background-image is set inline in admin/base_site.html*/
-    background-color: transparent;
+    background: transparent no-repeat fixed center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
