@@ -2,3 +2,10 @@
 {% load static %}
 
 {% block favicon %}<link href="{% static 'favicon.ico' %}" rel="shortcut icon">{% endblock %}
+
+{% block extrastyle %}
+    <link href='{% static "admin/css/extra.css" %}' rel='stylesheet' type='text/css'>
+    <style>
+        html {background-image: url({% static "admin/img/background.png" %});}
+    </style>
+{% endblock %}

@@ -1,0 +1,4 @@
+body {
+    /*static background-image is set inline in admin/base_site.html*/
+    background-color: transparent;
+}
