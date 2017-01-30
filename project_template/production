@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+import sys
+
+from server.utilities.deployment import main
+
+# don't create pyc or __pycache__ files/directories
+sys.dont_write_bytecode = True
+
+if __name__ == '__main__':
+    main('production')
