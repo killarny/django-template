@@ -255,5 +255,10 @@ USE_I18N = True
 USE_L10N = True
 
 
+# bootstrap fix for message constants
+from django.contrib.messages import constants as message_constants
+MESSAGE_TAGS = {message_constants.ERROR: 'danger'}
+
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
