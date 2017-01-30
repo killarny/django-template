@@ -33,7 +33,7 @@ urlpatterns = [
         RedirectView.as_view(url=static_asset('robots.txt'))),
 
     # landing page
-    url(r'^$', LandingView.as_view(), name='landing-page'),
+    url(r'^$', LandingView.as_view(), name='root'),
 
     # admin
     url(r'^admin/', admin.site.urls),
