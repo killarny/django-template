@@ -244,4 +244,4 @@ USE_L10N = True
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'z(s(boynb-08ch33fcx1=hs7#rx3*!oqv-7xk)m0k*yrdhfeqx'
+SECRET_KEY = '{{ secret_key }}'
