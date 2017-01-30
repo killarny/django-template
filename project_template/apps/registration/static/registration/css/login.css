@@ -1,0 +1,15 @@
+html {
+    /*static background-image is set inline in login.html*/
+    background: transparent no-repeat fixed center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.jumbotron {
+    opacity: 0.6;
+}
+.jumbotron .container {
+    max-width: 40%;
+    min-width: 500px;
+}
