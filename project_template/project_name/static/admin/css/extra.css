@@ -9,6 +9,9 @@ html {
 body {
     background-color: transparent;
 }
-#slide-out, nav.topbar, nav.breadcrumbs {
-    opacity: 0.6;
+#slide-out {
+    background-color: rgba(255, 255, 255, 0.95);
+}
+nav.topbar, nav.breadcrumbs {
+    background-color: rgba(80, 80, 80, 0.95);
 }
