@@ -23,6 +23,7 @@ from django.templatetags.static import static as static_asset
 from django.views.generic.base import RedirectView
 
 from apps.landing.views import LandingView
+from apps.registration.views import login, logout
 
 # some light admin customization
 admin.site.site_title = "{{ project_name }}"
@@ -42,8 +43,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     # auth
-    url(r'^auth/login/$', auth_views.login, name='login'),
-    url(r'^auth/logout/$', auth_views.logout, name='logout'),
+    url(r'^auth/login/$', login, name='login'),
+    url(r'^auth/logout/$', logout, name='logout'),
     url(r'^auth/social/', include('social_django.urls', namespace='social')),
 ]
 
