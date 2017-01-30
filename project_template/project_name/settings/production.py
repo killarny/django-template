@@ -110,8 +110,8 @@ MANAGERS = ADMINS = (
     ('Administrator', 'admin@{}'.format(SITE_DOMAIN)),
 )
 
-INTERNAL_IPS = ('127.0.0.1',)
-ALLOWED_HOSTS = [SITE_DOMAIN]
+INTERNAL_IPS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = [SITE_DOMAIN] + INTERNAL_IPS
 
 
 # Logging
