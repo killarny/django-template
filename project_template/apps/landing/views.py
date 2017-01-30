@@ -7,7 +7,10 @@ class LandingView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['links'] = [
-            {'name': 'admin', 'url': reverse('admin:index')},
-        ]
+        links = []
+        if not self.request.user.is_authenticated:
+            links.append({'name': 'login', 'url': reverse('login')})
+        if self.request.user.is_staff:
+            links.append({'name': 'admin', 'url': reverse('admin:index')})
+        context['links'] = links
         return context
