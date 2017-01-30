@@ -14,10 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf import settings
-from django.conf.urls import url
+from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
+from django.contrib.auth.decorators import login_required
 from django.templatetags.static import static as static_asset
 from django.views.generic.base import RedirectView
 
@@ -42,6 +43,7 @@ urlpatterns = [
     # auth
     url(r'^auth/login/$', auth_views.login, name='login'),
     url(r'^auth/logout/$', auth_views.logout, name='logout'),
+    url(r'^auth/social/', include('social_django.urls', namespace='social')),
 ]
 
 if settings.DEBUG:

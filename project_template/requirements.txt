@@ -1,3 +1,4 @@
 django>=1.10,<1.11
 psycopg2
 django-material
+social-auth-app-django
