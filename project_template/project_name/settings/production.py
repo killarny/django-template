@@ -73,9 +73,9 @@ DATABASES = {
 # Auth Configuration
 
 AUTH_USER_MODEL = 'auth.User'
-LOGIN_URL = 'auth:login'
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_URL = 'auth:logout'
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'root'
+LOGOUT_URL = 'logout'
 
 
 # Email settings

@@ -17,6 +17,7 @@ from django.conf import settings
 from django.conf.urls import url
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
 from django.templatetags.static import static as static_asset
 from django.views.generic.base import RedirectView
 
@@ -37,6 +38,10 @@ urlpatterns = [
 
     # admin
     url(r'^admin/', admin.site.urls),
+
+    # auth
+    url(r'^auth/login/$', auth_views.login, name='login'),
+    url(r'^auth/logout/$', auth_views.logout, name='logout'),
 ]
 
 if settings.DEBUG:
