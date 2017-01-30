@@ -9,7 +9,14 @@ html {
 .jumbotron {
     opacity: 0.6;
 }
-.jumbotron .container {
+.jumbotron .container, .container {
     max-width: 40%;
     min-width: 500px;
+}
+#login {
+    text-align: center;
+}
+.btn-social {
+    width: 250px;
+    display: inline-block;
 }
