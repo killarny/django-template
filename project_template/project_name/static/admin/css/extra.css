@@ -9,3 +9,6 @@ html {
 body {
     background-color: transparent;
 }
+#slide-out, nav.topbar, nav.breadcrumbs {
+    opacity: 0.6;
+}
