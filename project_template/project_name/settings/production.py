@@ -38,8 +38,9 @@ MIDDLEWARE = [
 ]
 
 
-# Domain configuration
+# Domain & site configuration
 
+SITE_NAME = '{{ project_name }}'
 SITE_SCHEMA = os.environ.get('SCHEMA', 'http')
 SITE_DOMAIN = os.environ.get('FQDN', 'localhost')
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -214,6 +215,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'social_django.context_processors.backends',
                 'social_django.context_processors.login_redirect',
+                '{{ project_name }}.context_processors.site_name',
             ],
         },
     },
