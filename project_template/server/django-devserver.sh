@@ -4,5 +4,6 @@ do
   echo "Waiting for database container to start..."
   sleep 5
 done
+python /{{ project_name }}/manage.py collectstatic --noinput
 python /{{ project_name }}/manage.py migrate --noinput
 uwsgi /{{ project_name }}/server/uwsgi.ini
