@@ -13,3 +13,4 @@ ADD requirements.txt /{{ project_name }}/
 RUN pip install --no-cache-dir --src /usr/src -r requirements.txt
 
 ADD . /{{ project_name }}
+CMD ["bash", "/django_project/server/uwsgi.sh"]
