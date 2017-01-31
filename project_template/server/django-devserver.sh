@@ -5,4 +5,4 @@ do
   sleep 5
 done
 python /{{ project_name }}/manage.py migrate --noinput
-python /{{ project_name }}/manage.py runserver 0.0.0.0:8000
+uwsgi /{{ project_name }}/server/uwsgi.ini
