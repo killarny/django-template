@@ -148,9 +148,10 @@ ALLOWED_HOSTS = [SITE_DOMAIN] + INTERNAL_IPS
 #
 # Messages which are less severe than the specified level will be ignored.
 from django.utils.log import DEFAULT_LOGGING
+LOGGING_CONFIG = None
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': True,
+    'disable_existing_loggers': False,
     'filters': DEFAULT_LOGGING['filters'],
     'formatters': {
         'default': {
@@ -190,21 +191,12 @@ LOGGING = {
     'loggers': {
         '': {
             'handlers': ['console', 'debug-console', 'file'],
-            'level': 'NOTSET',
-            'propagate': False,
-        },
-        'django': {
-            'handlers': ['console', 'debug-console', 'file'],
-            'level': 'NOTSET',
-            'propagate': False,
-        },
-        'django.request': {
-            'handlers': ['console', 'debug-console', 'file'],
-            'level': 'ERROR',
-            'propagate': False,
+            'level': 'DEBUG',
         },
     },
 }
+import logging.config
+logging.config.dictConfig(LOGGING)
 
 
 # Caching
