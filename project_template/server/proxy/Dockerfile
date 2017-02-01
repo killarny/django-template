@@ -12,6 +12,6 @@ RUN mkdir -p /opt/src/
 WORKDIR /opt/src/
 COPY Caddyfile Caddyfile.template
 COPY caddy.sh .
-COPY *.html .
+COPY *.html ./
 
 CMD ["bash", "caddy.sh"]
