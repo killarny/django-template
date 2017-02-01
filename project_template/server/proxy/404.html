@@ -18,10 +18,7 @@
       body {
         font-family: 'Chivo', sans-serif;
       }
-      .jumbotron {
-        background-color: rgba(255, 255, 255, 0.6);
-      }
-      .jumbotron .container, .container {
+      .jumbotron .container {
         max-width: 40%;
         min-width: 500px;
       }
@@ -40,14 +37,7 @@
     <div class="jumbotron">
       <div class="container">
         <h1><i class="fa fa-frown-o red"></i> 404 Not Found</h1>
-        <p class="lead">We couldn't find what you're looking for on <em><span id="display-domain"></span></em>.</p>
-        <p><a onclick=javascript:checkSite(); class="btn btn-default btn-lg"><span class="green">Take Me To The Homepage</span></a>
-          <script type="text/javascript">
-            function checkSite(){
-              window.location = window.location.protocol + "//" + window.location.host;
-            }
-          </script>
-        </p>
+        <p class="lead">We couldn't find what you're looking for.</p>
       </div>
     </div>
 

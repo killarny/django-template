@@ -16,4 +16,7 @@ https://${FQDN} {
 :80 {  # everything else should 404
   log / stdout "{host} - {when} - {remote} {method}: {status} {uri} {size}"
   tls off
+  errors {
+    404 404.html
+  }
 }
