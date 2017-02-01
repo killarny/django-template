@@ -11,5 +11,6 @@ RUN chmod +x caddy
 RUN mkdir -p /opt/src/
 WORKDIR /opt/src/
 COPY Caddyfile Caddyfile.template
+COPY caddy.sh .
 
 CMD ["bash", "caddy.sh"]
