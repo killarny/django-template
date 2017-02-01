@@ -18,8 +18,11 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import Group
 from django.templatetags.static import static as static_asset
 from django.views.generic.base import RedirectView
+
+from social_django.models import Association, Nonce, UserSocialAuth
 
 from apps.landing.views import LandingView
 from apps.registration.views import login, logout
@@ -27,6 +30,10 @@ from apps.registration.views import login, logout
 # some light admin customization
 admin.site.site_title = getattr(settings, 'SITE_NAME', '{{ project_name }}')
 admin.site.login = login_required(admin.site.login)
+admin.site.unregister(Group)
+admin.site.unregister(Association)
+admin.site.unregister(Nonce)
+admin.site.unregister(UserSocialAuth)
 
 urlpatterns = [
     # standard expected resources
