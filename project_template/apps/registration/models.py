@@ -2,6 +2,9 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
+    def __str__(self):
+        return self.get_full_name()
+
     @property
     def facebook(self):
         return self.social_auth.get(provider='facebook')
