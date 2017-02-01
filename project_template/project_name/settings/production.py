@@ -76,7 +76,7 @@ DATABASES = {
 
 # Auth Configuration
 
-AUTH_USER_MODEL = 'auth.User'
+AUTH_USER_MODEL = 'registration.User'
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'root'
 LOGOUT_URL = 'logout'
