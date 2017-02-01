@@ -9,13 +9,17 @@ services:
       SOCIAL_AUTH_FACEBOOK_SECRET: ""
     volumes:
       - .:/{{ project_name }}
-    ports:
-      - "8000:8000"
     restart: "no"
 
   database:
     volumes:
       - ./server/dev/data/:/var/lib/postgresql/data/
+    restart: "no"
+
+  proxy:
+    environment:
+      FQDN: 0.0.0.0
+      CONTACT_EMAIL: self_signed
     restart: "no"
 
 

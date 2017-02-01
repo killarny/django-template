@@ -29,5 +29,16 @@ services:
         max-file: "30"
     restart: "unless-stopped"
 
+  proxy:
+    build: server/proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "30"
+    restart: "unless-stopped"
+
 
 version: '2'

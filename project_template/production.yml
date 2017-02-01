@@ -11,13 +11,18 @@ services:
       SOCIAL_AUTH_FACEBOOK_KEY: ""
       SOCIAL_AUTH_FACEBOOK_SECRET: ""
     volumes:
-      - /var/{{ project_name }}/production/backend/:/var/media/{{ project_name }}/
-    ports:
-      - "8000:8000"
+      - /var/{{ project_name }}/production/site/:/var/media/{{ project_name }}/
 
   database:
     volumes:
-      - /var/{{ project_name }}/production/data/:/var/lib/postgresql/data/
+      - /var/{{ project_name }}/production/database/:/var/lib/postgresql/data/
+
+  proxy:
+    environment:
+      FQDN:  # TODO
+      CONTACT_EMAIL:  # TODO
+    volumes:
+      - /var/{{ project_name }}/production/proxy/:/root/.caddy/acme/
 
 
 version: '2'

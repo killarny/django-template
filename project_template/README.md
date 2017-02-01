@@ -19,7 +19,7 @@
 
 ### Admin
 
-Visit the admin in your browser at: [http://0.0.0.0:8000/admin](http://0.0.0.0:8000/admin)
+Visit the admin in your browser at: [https://0.0.0.0/admin](https://0.0.0.0/admin)
 
 ### Run tests
 

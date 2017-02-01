@@ -1,0 +1,19 @@
+##########
+# site
+# --------
+https://${FQDN} {
+  log / stdout "{host} - {when} - {remote} {method}: {status} {uri} {size}"
+  tls ${CONTACT_EMAIL}
+  proxy / site {
+    transparent
+  }
+}
+
+
+##########
+# other
+# --------
+:80 {  # everything else should 404
+  log / stdout "{host} - {when} - {remote} {method}: {status} {uri} {size}"
+  tls off
+}

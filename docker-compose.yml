@@ -3,12 +3,13 @@ services:
   site:
     build: .
     environment:
-      FQDN: 0.0.0.0
       DB_HOST: database
       PYTHONUNBUFFERED: 1
       SECRET_KEY: "development-only-secret-key"
-    ports:
-    - "8000:8000"
+      DJANGO_SETTINGS_MODULE: {{ project_name }}.settings.dev
+      FQDN: 0.0.0.0
+      SOCIAL_AUTH_FACEBOOK_KEY: ""
+      SOCIAL_AUTH_FACEBOOK_SECRET: ""
     restart: "no"
 
   database:
@@ -16,6 +17,16 @@ services:
     environment:
       POSTGRES_USER: django_project
       POSTGRES_PASSWORD: django_project
+    restart: "no"
+
+  proxy:
+    build: server/proxy
+    environment:
+      FQDN: 0.0.0.0
+      CONTACT_EMAIL: self_signed
+    ports:
+      - "80:80"
+      - "443:443"
     restart: "no"
 
 
