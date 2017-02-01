@@ -8,6 +8,8 @@ services:
       DJANGO_SETTINGS_MODULE: {{ project_name }}.settings.production
       SCHEMA: https
       FQDN: {{ project_name }}.TODO
+      SOCIAL_AUTH_FACEBOOK_KEY: ""
+      SOCIAL_AUTH_FACEBOOK_SECRET: ""
     volumes:
       - /var/{{ project_name }}/production/backend/:/var/media/{{ project_name }}/
     ports:
