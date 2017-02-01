@@ -9,3 +9,10 @@
         html {background-image: url({% static "admin/img/background.png" %});}
     </style>
 {% endblock %}
+
+{% block userphoto %}
+    {% if user.image_url %}
+        <a href="#"><img class="circle" src="{{ user.image_url }}"></a>
+    {% endif %}
+    {{ block.super }}
+{% endblock %}
