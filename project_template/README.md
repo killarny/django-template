@@ -19,7 +19,7 @@
 
 ### Admin
 
-Visit the admin in your browser at: [https://0.0.0.0/admin](https://0.0.0.0/admin)
+Visit the admin in your browser at: [https://localhost/admin](https://localhost/admin)
 
 ### Run tests
 
