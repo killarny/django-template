@@ -19,7 +19,8 @@ class User(AbstractUser):
 
 
 @receiver(post_save, sender=User)
-def first_user_is_admin(sender, instance, created, raw, using, update_fields):
+def first_user_is_admin(sender, instance, created,
+                        raw, using, update_fields, **kwargs):
     # is this user being created, and is it the first (i.e., the only) user?
     if created and sender.objects.count() == 1:
         # give them full access
