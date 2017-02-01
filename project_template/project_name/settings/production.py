@@ -88,7 +88,7 @@ SOCIAL_AUTH_FACEBOOK_KEY = os.environ.get('FACEBOOK_KEY')
 SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('FACEBOOK_SECRET')
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
-    'fields': 'email',
+    'fields': 'id, name, email',
 }
 SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.social_details',
