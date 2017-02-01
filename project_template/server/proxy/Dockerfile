@@ -1,7 +1,7 @@
 FROM debian:stable
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    gettext-base wget \
+    gettext-base wget nano \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/bin
