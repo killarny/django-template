@@ -25,7 +25,7 @@ from apps.landing.views import LandingView
 from apps.registration.views import login, logout
 
 # some light admin customization
-admin.site.site_title = "{{ project_name }}"
+admin.site.site_title = getattr(settings, 'SITE_NAME', '{{ project_name }}')
 admin.site.login = login_required(admin.site.login)
 
 urlpatterns = [
