@@ -3,3 +3,5 @@ psycopg2
 django-material
 social-auth-app-django
 uwsgi
+django-extensions
+bpython
