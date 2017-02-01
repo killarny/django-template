@@ -1,5 +1,6 @@
-from django.contrib.auth.models import User
 from django.core.mail import mail_managers
+
+from .models import User
 
 
 def first_user_is_admin(backend, user, response, *args, **kwargs):
