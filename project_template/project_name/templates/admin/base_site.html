@@ -13,6 +13,7 @@
 {% block userphoto %}
     {% if user.image_url %}
         <a href="#"><img class="circle" src="{{ user.image_url }}"></a>
+    {% else %}
+        {{ block.super }}
     {% endif %}
-    {{ block.super }}
 {% endblock %}
