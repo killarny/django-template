@@ -14,6 +14,6 @@ WORKDIR /django_project
 RUN pip install --no-cache-dir --src /usr/src -r requirements.txt
 
 # create links to the error pages in the proxy directory
-RUN ln -s /{{ project_name }}/server/proxy/*.html /{{ project_name }}/{{ project_name }}/templates/
+RUN ln -s /django_project/server/proxy/*.html /django_project/django_project/templates/
 
 CMD ["bash", "/django_project/server/uwsgi.sh"]
