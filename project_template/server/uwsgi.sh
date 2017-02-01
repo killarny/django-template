@@ -10,4 +10,4 @@ do
 done
 
 python /{{ project_name }}/manage.py migrate --noinput
-uwsgi /{{ project_name }}/server/uwsgi.ini
+uwsgi /{{ project_name }}/server/uwsgi.ini "$@"

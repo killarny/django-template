@@ -9,6 +9,7 @@ services:
       FACEBOOK_SECRET: ""
     volumes:
       - .:/{{ project_name }}
+    command: bash /{{ project_name }}/server/uwsgi.sh --py-autoreload=1
     restart: "no"
 
   database:
