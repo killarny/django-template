@@ -32,4 +32,4 @@ def first_user_is_admin(sender, instance, created,
         mail_managers('New superuser now has full site access.',
                       'User "{username}" is the first user to sign up, and '
                       'has been automatically granted superuser '
-                      'access.').format(username=instance.username)
+                      'access.'.format(username=instance.username))
