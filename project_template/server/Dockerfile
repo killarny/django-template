@@ -17,9 +17,8 @@ ENV BRANCH ${BRANCH:-master}
 ##############################################################################
 # ssh deploy key(s)
 # NOTE: copy/hardlink the deploy key into the directory containing this Dockerfile
-ADD deploy-key .
 RUN mkdir -p /root/.ssh/
-RUN mv deploy-key /root/.ssh/id_rsa
+ADD deploy-key /root/.ssh/id_rsa
 RUN chown root:root /root/.ssh/id_rsa
 RUN chmod 0600 /root/.ssh/id_rsa
 RUN touch /root/.ssh/known_hosts
