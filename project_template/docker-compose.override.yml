@@ -21,6 +21,9 @@ services:
     environment:
       FQDN: 0.0.0.0
       CONTACT_EMAIL: self_signed
+    ports:
+      - "80:80"
+      - "443:443"
     restart: "no"
 
 
