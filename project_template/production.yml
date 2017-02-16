@@ -3,6 +3,7 @@ services:
   site:
     build:
       args:
+        REPO_URL:  # TODO
         BRANCH: production
     environment:
       DJANGO_SETTINGS_MODULE: {{ project_name }}.settings.production
