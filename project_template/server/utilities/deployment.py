@@ -204,7 +204,7 @@ def main(environment_name):
     # build (or rebuild) a container.. ignores the cache by default
     up = subparsers.add_parser('update',
                                help='re/build and deploy a container')
-    up.add_argument('container', default='backend', nargs='*',
+    up.add_argument('container', default='site', nargs='*',
                     help="container(s) to update (default: '%(default)s)'")
     up.add_argument('-c', '--use-cache', action='store_true',
                     help="use the docker cache when possible for build steps")
@@ -215,7 +215,7 @@ def main(environment_name):
     lg = subparsers.add_parser('logs',
                                help='tail the interesting logs, with some '
                                     'short scrollback')
-    lg.add_argument('container', default='backend', nargs='*',
+    lg.add_argument('container', default='site', nargs='*',
                     help="container(s) to update (default: '%(default)s)'")
     lg.set_defaults(func=logs, environment_name=environment_name)
 
