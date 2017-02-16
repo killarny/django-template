@@ -48,6 +48,11 @@ RUN chown www-data:www-data -R /var/run/{{ project_name }}/
 
 
 ##############################################################################
+# create links to the error pages in the proxy directory
+RUN ln -s /{{ project_name }}/server/proxy/*.html /{{ project_name }}/{{ project_name }}/templates/
+
+
+##############################################################################
 # run the server
 WORKDIR /{{ project_name }}
 CMD ["bash", "/{{ project_name }}/server/uwsgi.sh"]
