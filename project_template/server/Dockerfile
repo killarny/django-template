@@ -8,6 +8,13 @@ RUN apt-get -qqy update && apt-get install -qqy \
 
 
 ##############################################################################
+# specify and process build args
+ARG REPO_URL
+ARG BRANCH
+ENV BRANCH ${BRANCH:-master}
+
+
+##############################################################################
 # ssh deploy key(s)
 # NOTE: copy/hardlink the deploy key into the directory containing this Dockerfile
 ADD deploy-key .
@@ -16,15 +23,11 @@ RUN mv deploy-key /root/.ssh/id_rsa
 RUN chown root:root /root/.ssh/id_rsa
 RUN chmod 0600 /root/.ssh/id_rsa
 RUN touch /root/.ssh/known_hosts
-RUN ssh-keyscan -T 60 code.alt.net >> /root/.ssh/known_hosts
+RUN ssh-keyscan -T 60 $(echo ${REPO_URL} | awk -F/ '{print $1}' | awk -F: '{print $1}' | awk -F@ '{print $2}') >> /root/.ssh/known_hosts
 
 
 ##############################################################################
-# set project branch, and clone repo
-ARG REPO_URL
-ENV REPO_URL ${REPO_URL}
-ARG BRANCH
-ENV BRANCH ${BRANCH:-master}
+# clone repo
 RUN git clone -b ${BRANCH} ${REPO_URL} /{{ project_name }}
 
 
