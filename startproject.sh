@@ -23,7 +23,7 @@ fi
 TEMP_DIR=$(mktemp -d)
 
 # dowload the template archive, and extract the project_template into $TEMP_DIR
-wget -qO- https://code.killarny.net/community/django-template/repository/archive.tar.gz?ref=master |tar zx -C $TEMP_DIR --strip-components=2
+wget -qO- https://github.com/killarny/django-template/archive/master.tar.gz |tar zx -C $TEMP_DIR --strip-components=2
 
 # invoke django startproject
 django-admin startproject \

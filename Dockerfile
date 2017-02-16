@@ -8,7 +8,7 @@ RUN apt-get -qqy update && apt-get install -qqy \
 
 WORKDIR /
 RUN pip install django
-RUN bash -c "bash <(wget -qO- https://code.killarny.net/community/django-template/raw/master/startproject.sh) django_project"
+RUN bash -c "bash <(wget -qO- https://github.com/killarny/django-template/raw/master/startproject.sh) django_project"
 
 WORKDIR /django_project
 RUN pip install --no-cache-dir --src /usr/src -r requirements.txt

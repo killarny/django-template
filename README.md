@@ -18,7 +18,7 @@ to which @luke contributed heavily while employed there)
 1. Run this command in your newly created project directory, replacing `project_name` with your project name:
 
     ```bash
-    bash <(wget -qO- https://code.killarny.net/community/django-template/raw/master/startproject.sh) project_name
+    bash <(wget -qO- https://github.com/killarny/django-template/raw/master/startproject.sh) project_name
     ```
 
 1. Follow the instructions in the new __README.md__ in your project directory.
