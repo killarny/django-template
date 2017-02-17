@@ -11,12 +11,14 @@
 {% block content %}
     <div class="jumbotron">
         <div class="container">
-            <h1>{{ site_name }}</h1>
+            <h1>{% trans "Welcome!" %}</h1>
 
-            <p class="lead">Select an area of this site to visit.</p>
+            <p class="lead">{% trans "Not much to see here yet, but we're working on it." %}</p>
+            {% if request.user.is_authenticated %}
             <p>{% for link in links %}
                 <a class="btn btn-primary btn-lg" href="{{ link.url }}" role="button">{{ link.name }} &raquo;</a>
             {% endfor %}</p>
+            {% endif %}
         </div>
     </div>
 {% endblock content %}
