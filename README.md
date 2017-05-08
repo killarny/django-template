@@ -8,6 +8,9 @@ structure revolving around the use of
 development and deployment environments as similar as possible, while also 
 easing ongoing maintenance tasks.
 
+Also provides a number of custom apps as a starting point: registration with 
+Facebook auth, a landing page, and admin improvements.
+
 (originally inspired by the 
 [Izeni Django Template](https://dev.izeni.net/izeni/izeni-django-template), 
 to which @luke contributed heavily while employed there)
