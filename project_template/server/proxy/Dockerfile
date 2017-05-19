@@ -5,7 +5,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/bin
-RUN wget -qO- "https://caddyserver.com/download/build?os=linux&arch=amd64&features=" | tar zx
+RUN wget -qO- "https://caddyserver.com/download/linux/amd64" | tar zx
 RUN chmod +x caddy
 
 RUN mkdir -p /opt/src/
